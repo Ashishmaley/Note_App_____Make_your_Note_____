@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp">
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:id="@+id/cardView"
+    app:cardBackgroundColor="#D69898"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/noteTextView"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="kbkjaskn"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="@color/white"
+        android:fontFamily="@font/advent_pro_medium"
+        android:textSize="25sp"/>
+</androidx.cardview.widget.CardView>
+
+</LinearLayout>
