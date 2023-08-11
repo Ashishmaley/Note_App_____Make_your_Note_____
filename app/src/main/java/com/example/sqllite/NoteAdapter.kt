@@ -22,6 +22,22 @@ class NoteAdapter(private val notes: ArrayList<Note>,private val dbHelper: SqlLi
         val colorIndex = position % cardColors.size
         val cardColor = Color.parseColor(cardColors[colorIndex])
         holder.cardView.setCardBackgroundColor(cardColor)
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val note = notes[position]
+
+            // Inflate the note_display.xml layout
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.note_display, null)
+            val noteTextView: TextView = dialogView.findViewById(R.id.textView)
+            noteTextView.text = note.noteText
+
+            // Create and show a custom AlertDialog with the inflated layout
+            val alertDialogBuilder = AlertDialog.Builder(context)
+                .setView(dialogView)
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
+        }
+
         holder.itemView.setOnLongClickListener {
             val context = holder.itemView.context
             val note = notes[position]
